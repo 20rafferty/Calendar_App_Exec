@@ -1,4 +1,4 @@
-config.py
+api_info.json
 *__pycache__/
 *venv/
 *env/

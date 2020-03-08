@@ -1,0 +1,22 @@
+{ "api_data": {
+  "outlook": {
+    "client_key": "",
+    "client_sectet": "",
+    "api_key": "",
+    "person_api_key": "",
+    "api_secret": ""
+  },
+  "google":
+    { "client_key": "",
+      "client_sectet": "",
+      "api_key": "5ygrdgrdtr5",
+      "api_secret": ""
+    },
+  "weather": {
+    "client_key": "",
+    "city": ""
+  },
+    "app_secret_key":
+      { "secret_key": ""
+      }
+  }}
