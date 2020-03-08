@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+<h1>Test 1</h1>
+
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Event</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Event Name">
+  </div>
+<div class = "form-row" >
+  <div class="form-group col-md-2">
+    <label for="inputHour">Hour</label>
+    <select id="inputHour" class="form-control">
+      <option selected>Choose Hour...</option>
+        {% for hour in range(1, 13) %}
+      <option>{{hour}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group col-md-2">
+    <label for="inputMinute">Minute</label>
+    <select id="inputMinute" class="form-control">
+      <option selected>Choose Minute...</option>
+        {% for minute in range(1, 61) %}
+      <option>{{minute}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class = "form-row" >
+    <div class="form-group col-md-4">
+      <label for="inputDay">Day</label>
+      <select id="inputDay" class="form-control">
+        <option selected>Choose Day...</option>
+          {% for day in range(1, 32) %}
+        <option>{{day}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputMonth">Month</label>
+      <select id="inputMonth" class="form-control">
+        <option selected>Choose Month...</option>
+          {% for Month in range(1, 13) %}
+        <option>{{Month}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputYear">Year</label>
+      <select id="inputYear" class="form-control">
+        <option selected>Choose Year...</option>
+          {% for Year in range(1, 3000) %}
+        <option>{{Year}}</option>
+        {% endfor %}
+      </select>
+    </div>
+</form>
+
+{% endblock %}
