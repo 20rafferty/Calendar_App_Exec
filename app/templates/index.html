@@ -1,6 +1,19 @@
+{% import 'bootstrap/wtf.html' as wtf %}
 {% extends 'base.html' %}
 
 {% block app_content %}
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <!-- - displays error messages -->
+    {% for fieldName, errorMessages in form.errors.items() %}
+      {% for error in errorMessages %}
+      <p class="error">{{ fieldName.title() }}: {{ error }}</p>
+      {% endfor %}
+    {% endfor %}
+
+    {{ wtf.quick_form( form ) }}
+  </div> <!-- ends col -->
+</div> <!-- ends row -->
   {% if response %}
     <!-- cards for information to be rendered -->
     <div class="container" id="weather-info">
