@@ -10,8 +10,27 @@ import requests
 
 # index is going to call weather api and show information on front
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index')
 def index():
+    API_KEY = app.config['WEATHER_API_KEY']
+    # print(API_KEY)
+    city = 'boston'
+
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={API_KEY}&units=imperial'
+
+    #json() method convets string response into python dictionary
+    response = requests.get(url).json()
+
+    print(response)
+    return render_template('index.html', response=response)
+
+@app.route('/calendar')
+def calendar():
+    print("something important")
+    return render_template('Calendar.html')
+
+@app.route('/citylookup', methods=['GET', 'POST'])
+def citylookup():
     API_KEY = app.config['WEATHER_API_KEY']
     # print(API_KEY)
     city = 'boston'
@@ -33,9 +52,4 @@ def index():
     response = requests.get(url).json()
 
     print(response)
-    return render_template('index.html', form=form, response=response)
-
-@app.route('/calendar')
-def calendar():
-    print("something important")
-    return render_template('Calendar.html')
+    return render_template('citylookup.html', form=form, response=response)
